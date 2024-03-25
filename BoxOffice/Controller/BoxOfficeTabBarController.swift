@@ -34,7 +34,6 @@ final class BoxOfficeTabBarController: UITabBarController {
         trailerSearchItem.image = UIImage(systemName: "camera.metering.center.weighted")
         
         tabBar.backgroundColor = .systemBackground
-        tabBar.backgroundColor = .systemGray
     }
     
 }
