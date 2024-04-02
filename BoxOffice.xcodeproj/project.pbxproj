@@ -12,6 +12,9 @@
 		63DF20F32970E1A0005DF7D1 /* BoxOfficeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DF20F22970E1A0005DF7D1 /* BoxOfficeViewController.swift */; };
 		63DF20F82970E1A1005DF7D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63DF20F72970E1A1005DF7D1 /* Assets.xcassets */; };
 		63DF20FB2970E1A1005DF7D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63DF20F92970E1A1005DF7D1 /* LaunchScreen.storyboard */; };
+		8A4318BE2BBBD68700482CD0 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 8A4318BD2BBBD68700482CD0 /* RxCocoa */; };
+		8A4318C02BBBD68700482CD0 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8A4318BF2BBBD68700482CD0 /* RxSwift */; };
+		8A4318C32BBBF70900482CD0 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8A4318C22BBBF70900482CD0 /* Alamofire */; };
 		8A494C812B84D19800128F75 /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A494C802B84D19800128F75 /* URLSessionProtocol.swift */; };
 		8A4EA61E2B9F252E00CA538E /* KakaoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4EA61D2B9F252E00CA538E /* KakaoAPI.swift */; };
 		8A4EA6202B9F2F7D00CA538E /* MovieImageDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4EA61F2B9F2F7D00CA538E /* MovieImageDocument.swift */; };
@@ -110,6 +113,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A4318C32BBBF70900482CD0 /* Alamofire in Frameworks */,
+				8A4318C02BBBD68700482CD0 /* RxSwift in Frameworks */,
+				8A4318BE2BBBD68700482CD0 /* RxCocoa in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,6 +370,11 @@
 			dependencies = (
 			);
 			name = BoxOffice;
+			packageProductDependencies = (
+				8A4318BD2BBBD68700482CD0 /* RxCocoa */,
+				8A4318BF2BBBD68700482CD0 /* RxSwift */,
+				8A4318C22BBBF70900482CD0 /* Alamofire */,
+			);
 			productName = BoxOffice;
 			productReference = 63DF20EB2970E1A0005DF7D1 /* BoxOffice.app */;
 			productType = "com.apple.product-type.application";
@@ -414,6 +425,10 @@
 				Base,
 			);
 			mainGroup = 63DF20E22970E1A0005DF7D1;
+			packageReferences = (
+				8A4318BC2BBBD68600482CD0 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				8A4318C12BBBF70900482CD0 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 63DF20EC2970E1A0005DF7D1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -780,6 +795,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8A4318BC2BBBD68600482CD0 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.6.0;
+			};
+		};
+		8A4318C12BBBF70900482CD0 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8A4318BD2BBBD68700482CD0 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8A4318BC2BBBD68600482CD0 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		8A4318BF2BBBD68700482CD0 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8A4318BC2BBBD68600482CD0 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		8A4318C22BBBF70900482CD0 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8A4318C12BBBF70900482CD0 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 63DF20E32970E1A0005DF7D1 /* Project object */;
 }
