@@ -12,7 +12,9 @@ enum BoxOfficeAPI {
     case movieDetailInformation(movieCode: String)
 }
 
+// MARK: - Private Properties
 extension BoxOfficeAPI {
+    // TODO: baseURL 에서 path 분리하기
     private var baseURL: String {
         return "https://kobis.or.kr/kobisopenapi/webservice/rest/"
     }
@@ -24,6 +26,7 @@ extension BoxOfficeAPI {
     }
 }
 
+// MARK: - URLRequestConvertible
 extension BoxOfficeAPI: URLRequestConvertible {
     var urlRequest: URLRequest? {
         switch self {

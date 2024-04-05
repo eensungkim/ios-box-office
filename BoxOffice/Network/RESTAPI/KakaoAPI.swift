@@ -11,7 +11,9 @@ enum KakaoAPI {
     case image(query: String)
 }
 
+// MARK: - Private Properties
 extension KakaoAPI {
+    // TODO: baseURL 에서 path 분리하기
     private var baseURL: String {
         return "https://dapi.kakao.com/v2/search/image"
     }
@@ -23,6 +25,7 @@ extension KakaoAPI {
     }
 }
 
+// MARK: - URLRequestConvertible
 extension KakaoAPI: URLRequestConvertible {
     var urlRequest: URLRequest? {
         switch self {
