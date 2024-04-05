@@ -8,17 +8,20 @@
 import Foundation
 
 final class URLRequestBuilder {
-    var url: String = ""
-    var httpMethod: HTTPMethod
-    var body: Data?
-    var headers: [String: String]?
+    private(set) var url: String = ""
+    private(set) var httpMethod: HTTPMethod
+    private(set) var body: Data?
+    private(set) var headers: [String: String]?
     
     init(httpMethod: HTTPMethod = .get, body: Data? = nil, headers: [String : String]? = nil) {
         self.httpMethod = httpMethod
         self.body = body
         self.headers = headers
     }
-    
+}
+
+// MARK: - Builder Methods
+extension URLRequestBuilder {
     func baseURL(_ baseURL: String) -> Self {
         url += baseURL
         return self
