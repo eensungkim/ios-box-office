@@ -11,9 +11,9 @@ extension Int {
     func formatNumber() -> String {
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
-        guard let result = formatter.string(from: NSNumber(value: self)) else {
-            return ""
-        }
+        
+        guard let result = formatter.string(from: NSNumber(value: self)) else { return "" }
+        
         return result
     }
 }

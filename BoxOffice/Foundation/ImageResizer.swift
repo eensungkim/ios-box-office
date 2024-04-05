@@ -13,11 +13,11 @@ extension UIImage {
         let newHeight = self.size.height * scale
 
         let size = CGSize(width: newWidth, height: newHeight)
-        let render = UIGraphicsImageRenderer(size: size)
-        let renderImage = render.image { context in
+        let renderer = UIGraphicsImageRenderer(size: size)
+        let renderedImage = renderer.image { context in
             self.draw(in: CGRect(origin: .zero, size: size))
         }
         
-        return renderImage
+        return renderedImage
     }
 }

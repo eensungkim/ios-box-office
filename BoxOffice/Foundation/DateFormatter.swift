@@ -20,6 +20,7 @@ extension Date {
     func formatted(using format: Format) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = format.rawValue
+        
         return formatter.string(from: self)
     }
 }
