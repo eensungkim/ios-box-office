@@ -9,18 +9,21 @@ import Foundation
 
 enum KakaoAPI {
     case image(query: String)
-    
-    var baseURL: String {
+}
+
+extension KakaoAPI {
+    private var baseURL: String {
         return "https://dapi.kakao.com/v2/search/image"
     }
     
-    var apiKey: String {
-        guard let apiKey = Bundle.main.infoDictionary?["KAKAO_API_KEY"] as? String else {
-            return ""
-        }
+    private var apiKey: String {
+        guard let apiKey = Bundle.main.infoDictionary?["KAKAO_API_KEY"] as? String else { return "" }
+        
         return "KakaoAK \(apiKey)"
     }
-    
+}
+
+extension KakaoAPI: URLRequestConvertible {
     var urlRequest: URLRequest? {
         switch self {
         case .image(let query):
